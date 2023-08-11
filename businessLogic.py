@@ -22,7 +22,7 @@ def depositMoney(account,amount):
 # returns boolean value whether the transaction could proceed or not
 def transferFunds(from_account, to_account, amount):
     from_balance = showBalance(from_account)
-    print(f'Your current balance is {balance}.')
+    print(f'Your current balance is {from_account.balance}.')
     if from_account.balance < amount:
         print('Not enough balance!')
         return False
