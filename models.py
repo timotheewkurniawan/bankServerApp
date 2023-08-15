@@ -5,7 +5,7 @@ class Customer:
         self.account_list = account_list
 
 class Account:
-    def __init__(self, account_id, balance, transaction_list):
+    def __init__(self, account_id, transaction_list, balance):
         self.account_id = account_id
         self.transaction_list = transaction_list
         self.balance = balance

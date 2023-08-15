@@ -1,4 +1,3 @@
-# returns a boolean value whether it is possible to withdraw the money or not
 def withdrawMoney(account,amount):
     balance = showBalance(account)
     print(f'Your current balance is {balance}.')
@@ -17,9 +16,9 @@ def showBalance(account):
 
 def depositMoney(account,amount):
     account.balance += amount
+    print("Deposit successfully, total amount in account is",str(account.balance))
 
 
-# returns boolean value whether the transaction could proceed or not
 def transferFunds(from_account, to_account, amount):
     from_balance = showBalance(from_account)
     print(f'Your current balance is {from_account.balance}.')
@@ -31,3 +30,11 @@ def transferFunds(from_account, to_account, amount):
         print(f'Funds transfered, your current balance is {from_balance - amount}')
         to_account.balance += amount
         return True
+    
+def showRecentTransactions(account):
+    count = 0
+    for i in range(len(account.transaction_list) - 1, -1, -1):
+        if count == 10:
+            break
+        print(account.transaction_list[i].__dict__)
+        count += 1
